@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<head>
+		<css src="validation-material.css" media="screen,projection"/>
+        <script src="jquery.validate.js" />
+        <script src="jQ-material.js" />
+        <title>Create Blog</title> 
+	</head>
+    <body>
+    	<referenceContainer name="main">
+    		<block class="Mods\Blog\Block\Form\Add" name="blog.add"/>
+    	</referenceContainer>
+    </body>
+</page>
