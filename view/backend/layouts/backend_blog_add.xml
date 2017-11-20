@@ -1,14 +1,24 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<head>
-		<css src="validation-material.css" media="screen,projection"/>
         <script src="jquery.validate.js" />
-        <script src="jQ-material.js" />
+        <script src="jquery-bootstrap.js" />
+        <css src="summernote.css"/>
+        <script src="summernote.js" />
         <title>Create Blog</title> 
 	</head>
     <body>
     	<referenceContainer name="main">
-    		<block class="Mods\Blog\Block\Form\Add" name="blog.add"/>
+            <container name="blog.add.wrapper" htmlTag="div" htmlClass="row">
+                <container name="blog.add.main" htmlTag="div" htmlClass="col-sm-12 col-md-8 col-lg-9">
+                    <block class="Mods\Blog\Block\Form\Add" name="blog.add"  template="blog::form"/>    
+                    <container name="blog.add.extra" label="Add Container" />
+                </container>
+                <container name="blog.add.sidepanel" htmlTag="div" htmlClass="col-sm-12 col-md-4 col-lg-3 mt-3 mt-md-0">
+                    <block class="Mods\Blog\Block\Form\Status" name="blog.sidepanel.status" template="blog::sidepanel.status" />
+                    <container name="blog.add.sidepanel.extra" label="Sidepanel Container" />
+                </container> 
+            </container>                 	
     	</referenceContainer>
     </body>
 </page>

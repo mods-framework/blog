@@ -6,9 +6,9 @@ class MenuEventSubscriber {
 
     public function addMenu($menu)
     {
-        $menu->add('Blog', 'Blog')->prepend('<i class="material-icons">book</i> ');
-        $menu->blog->add('List', 'List', ['route' => 'backend.blog.all'])->prepend('<i class="material-icons">list</i> ');        
-        $menu->blog->add('Add', 'Add', ['route' => 'backend.blog.add'])->prepend('<i class="material-icons">add</i> ');
+        $menu->add('Blog', 'Blog')->prepend('<span class="oi oi-book"></span>');
+        $menu->blog->add('Add', 'Add', ['route' => 'backend.blog.add'])->prepend('<span class="oi oi-plus"></span>');
+        $menu->blog->add('List', 'List', ['route' => 'backend.blog.all'])->prepend('<span class="oi oi-list"></span>');
     }
 
     /**

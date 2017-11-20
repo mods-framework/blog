@@ -42,6 +42,6 @@ class BlogServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        
+        $this->app->bind(Models\Post::class, Models\Post::class);
     }
 }

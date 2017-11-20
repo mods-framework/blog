@@ -2,35 +2,17 @@
 
 namespace Mods\Blog\Block\Form;
 
-use Mods\View\Blocks\Form as BaseForm;
+use Mods\View\Blocks\EmptyBlock;
+use Mods\View\Block as BaseBlock;
 
-class Add extends BaseForm
+class Add extends BaseBlock
 {
-
-	/**
-     * The given form to render.
-     *
-     * @var string
-     */
-    protected $form = 'Mods\Blog\Forms\Add';
-
-	/**
-    * Get the Title of the form
-    *
-    * @return string
-    */
-    public function getTitle()
+    public function getForm()
     {
-       return 'Create Blog';
-    }
-
-    /**
-    * Get the Title of the form
-    *
-    * @return string
-    */
-    public function getHeaderIcon()
-    {
-        return '<i class="material-icons">book</i>';
+        return $this->getLayout()
+                ->createBlock(EmptyBlock::class, 'form.elements')
+                ->setTemplate('form.elements')
+                ->assign($this->app->make(\Mods\Blog\Forms\Add::class)->build())
+                ->toHtml();
     }
 }
