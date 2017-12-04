@@ -18,14 +18,6 @@ class Add extends Form
             ->add('content', 'editor', function($field) {
                $field->addClass('required')->id('blog_content')->rules('required')->label('Content');
             })
-            ->add('status', 'select', function($field) {
-                  $field->options([
-                        'publish' => 'Publish',
-                        'draft' => 'Draft',
-                    ])
-                  ->label('Status')->select('draft')
-                  ->addClass('form-control required');
-            })
             ->close();
     }
 }
